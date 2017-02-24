@@ -8,7 +8,7 @@ import (
 	"github.com/gonum/plot/plotutil"
 	"github.com/gonum/plot/vg"
 
-	"github.com/JoshuaKolden/twerp"
+	"github.com/JoshuaKolden/interp"
 )
 
 func main() {
@@ -110,7 +110,7 @@ func easeinPoints(n int, exp float64) plotter.XYs {
 		// range from 0.0 to 1.0
 		t := float64(i) / float64(n-1)
 		pts[i].X = t
-		pts[i].Y = twerp.Easeinstep(t, exp)
+		pts[i].Y = interp.Easeinstep(t, exp)
 	}
 	return pts
 }
@@ -121,7 +121,7 @@ func easeoutPoints(n int, exp float64) plotter.XYs {
 		// range from 0.0 to 1.0
 		t := float64(i) / float64(n-1)
 		pts[i].X = t
-		pts[i].Y = twerp.Easeoutstep(t, exp)
+		pts[i].Y = interp.Easeoutstep(t, exp)
 	}
 	return pts
 }
@@ -132,7 +132,7 @@ func stepPoints(n int) plotter.XYs {
 		// range from 0.0 to 1.0
 		t := float64(i) / float64(n-1)
 		pts[i].X = t
-		pts[i].Y = twerp.Step(t, 0.5)
+		pts[i].Y = interp.Step(t, 0.5)
 	}
 	return pts
 }
@@ -143,7 +143,7 @@ func linearstepPoints(n int) plotter.XYs {
 		// range from 0.0 to 1.0
 		t := float64(i) / float64(n-1)
 		pts[i].X = t
-		pts[i].Y = twerp.Linearstep(t)
+		pts[i].Y = interp.Linearstep(t)
 	}
 	return pts
 }
@@ -154,7 +154,7 @@ func smoothstepPoints(n int) plotter.XYs {
 		// range from 0.0 to 1.0
 		t := float64(i) / float64(n-1)
 		pts[i].X = t
-		pts[i].Y = twerp.Smoothstep(t)
+		pts[i].Y = interp.Smoothstep(t)
 	}
 	return pts
 }

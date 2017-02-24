@@ -26,7 +26,7 @@ func TestClamp(t *testing.T) {
 		{32.32, 32.2, 37.87, 32.32},
 	}
 
-	for _, test := range interp {
+	for _, test := range tests {
 		r := interp.Clamp(test.T, test.X, test.Y)
 		is.Equal(test.R, r)
 	}
