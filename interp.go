@@ -1,13 +1,3 @@
-// The interp package is a collection of interpolation functions.
-// Most functions are controlled by the first argument t as it
-// ranges between 0.0 and 1.0.
-
-// With the exception of 'Clamp', functions in this package take one of three forms.
-//
-// _: Functions that do not end with 'step' or 'mix' return normalized values that are not clamped.
-// _Step: Function that end with 'step', return normalized values that clamp between 0.0 and 1.0
-// _Mix: Functions that end with 'mix', return results that are not normalized, and rage across the provided arguments
-//
 package interp
 
 import "math"
@@ -47,20 +37,20 @@ func Map(t float64, x float64, y float64) float64 {
 	return (t - x) / (y - x)
 }
 
-// Linear mapping of t, clamped within 0.0 to 1.0
+// Linear mapping of t, in the rage 0.0 to 1.0
 func Linearstep(t float64) (r float64) {
 	t = Clamp(t, 0, 1)
 	return t
 }
 
-// Easeinout mapping of t, clamped to the range 0 to 1
+// Smoothstep return a value between 0.0 and 1.0 that eases in and out as as t ranges between 0.0 and 1.0
 func Smoothstep(t float64) float64 {
 	r := Linearstep(t)
 	r = r * r * (3 - 2*r)
 	return r
 }
 
-// Easeinout mapping of t, clamped to the range 0 to 1
+// Easeinout returns a smoothstep value between 0.0 and 1.0 as t ranges between x and y.
 func Smoothmix(t float64, x float64, y float64) (r float64) {
 	r = Linearstep(t)
 	r = r * r * (3 - 2*r)
