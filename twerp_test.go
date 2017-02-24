@@ -1,11 +1,11 @@
-package twerp_test
+package interp_test
 
 import (
 	"testing"
 
 	"github.com/cheekybits/is"
 
-	"github.com/JoshuaKolden/twerp"
+	"github.com/JoshuaKolden/interp"
 )
 
 func TestClamp(t *testing.T) {
@@ -26,8 +26,8 @@ func TestClamp(t *testing.T) {
 		{32.32, 32.2, 37.87, 32.32},
 	}
 
-	for _, test := range tests {
-		r := twerp.Clamp(test.T, test.X, test.Y)
+	for _, test := range interp {
+		r := interp.Clamp(test.T, test.X, test.Y)
 		is.Equal(test.R, r)
 	}
 
