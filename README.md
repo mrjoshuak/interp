@@ -1,4 +1,4 @@
-# Twerp
+# Interp
 
 A collection of basic interpolation functions.
 
@@ -18,7 +18,7 @@ A collection of basic interpolation functions.
 ![Smothstep vs Easein/out plots][smoothease]
 
 
-[steps]: https://github.com/JoshuaKolden/twerp/blob/master/cmd/plot/steps.png
-[easein]: https://github.com/JoshuaKolden/twerp/blob/master/cmd/plot/easein.png
-[easeout]: https://github.com/JoshuaKolden/twerp/blob/master/cmd/plot/easeout.png
-[smoothease]: https://github.com/JoshuaKolden/twerp/blob/master/cmd/plot/smoothease.png
+[steps]: https://github.com/JoshuaKolden/interp/blob/master/cmd/plot/steps.png
+[easein]: https://github.com/JoshuaKolden/interp/blob/master/cmd/plot/easein.png
+[easeout]: https://github.com/JoshuaKolden/interp/blob/master/cmd/plot/easeout.png
+[smoothease]: https://github.com/JoshuaKolden/interp/blob/master/cmd/plot/smoothease.png
