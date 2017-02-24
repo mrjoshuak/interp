@@ -1,4 +1,4 @@
-// The twerp package is a collection of interpolation functions.
+// The interp package is a collection of interpolation functions.
 // Most functions are controlled by the first argument t as it
 // ranges between 0.0 and 1.0.
 
@@ -8,7 +8,7 @@
 // _Step: Function that end with 'step', return normalized values that clamp between 0.0 and 1.0
 // _Mix: Functions that end with 'mix', return results that are not normalized, and rage across the provided arguments
 //
-package twerp
+package interp
 
 import "math"
 
