@@ -29,12 +29,13 @@ func Step(t float64, x float64) float64 {
 // along the slope of x and y.
 // In this context 't' is sometimes referred to as 'alpha'
 func Mix(t float64, x float64, y float64) float64 {
+	t = Clamp(t, 0.0, 1.0)
 	return x + t*(y-x) //t*y + (1-t)*x
 }
 
 // Map is the inverse of Mix, output is 0.0 when t == x and 1.0 when t == y
 func Map(t float64, x float64, y float64) float64 {
-	return (t - x) / (y - x)
+	return Clamp((t-x)/(y-x), 0.0, 1.0)
 }
 
 // Linear mapping of t, in the rage 0.0 to 1.0
@@ -50,9 +51,9 @@ func Smoothstep(t float64) float64 {
 	return r
 }
 
-// Easeinout returns a smoothstep value between 0.0 and 1.0 as t ranges between x and y.
+// Smoothmix returns a smoothstep value between 0.0 and 1.0 as t ranges between x and y.
 func Smoothmix(t float64, x float64, y float64) (r float64) {
-	r = Linearstep(t)
+	r = Linearstep((t - x) / (y - x))
 	r = r * r * (3 - 2*r)
 	return
 }
